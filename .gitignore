@@ -1,0 +1,9 @@
+pay_lolz/
+
+__pycache__
+
+*.pyc
+
+.vscode
+
+.env
