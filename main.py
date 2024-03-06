@@ -7,8 +7,7 @@ from payment_check import lolz_pay
 #########################
 
 # create instance of the app
-app = FastAPI(docs_url=None,
-              redoc_url=None)
+app = FastAPI()
 
 # openapi_url = None
 origins = [
