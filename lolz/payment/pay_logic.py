@@ -5,9 +5,7 @@ from config import LOLZ_API_TOKEN, LOLZ_USER_ID
 # from log_config import logger
 from lolz.lolzapi import LolzteamApi
 
-
 api = LolzteamApi(token=LOLZ_API_TOKEN)
-
 
 # logger.info("This is an info message")
 # logger.warning("This is a warning message")
@@ -27,13 +25,18 @@ class PaymentCheck:
         :return: True, если платеж найден, False в противном случае.
         """
         try:
-            data_payments = api.market.payments.history(user_id=int(
-                LOLZ_USER_ID), operation_type='income', pmin=self.subs_price, pmax=self.subs_price, comment=self.comment_token)
+            data_payments = api.market.payments.history(
+                user_id=int(LOLZ_USER_ID),
+                operation_type="income",
+                pmin=self.subs_price,
+                pmax=self.subs_price,
+                comment=self.comment_token,
+            )
 
-            if int(len(data_payments['payments'])):
+            if int(len(data_payments["payments"])):  # noqa: SIM103
                 return True
-            else:
+            else:  # noqa: RET505
                 return False
-        except Exception:
+        except Exception:  # noqa: BLE001
             await asyncio.sleep(2)
             # logger.error(f"Ошибка lolz: {err}")
