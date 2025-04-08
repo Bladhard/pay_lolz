@@ -37,3 +37,8 @@ api_router = APIRouter()
 api_router.include_router(lolz_pay, prefix="/bot", tags=["Lolz payment check"])
 
 app.include_router(api_router)
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")

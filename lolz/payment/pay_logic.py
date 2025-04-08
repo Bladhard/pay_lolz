@@ -31,9 +31,9 @@ class PaymentCheck:
                 pmin=self.subs_price,
                 pmax=self.subs_price,
                 comment=self.comment_token,
+                is_hold="false",
             )
-
-            if int(len(data_payments["payments"])):  # noqa: SIM103
+            if len(data_payments["payments"]):
                 return True
             else:  # noqa: RET505
                 return False

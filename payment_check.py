@@ -2,9 +2,7 @@ from fastapi import APIRouter
 
 from lolz.payment.pay_logic import PaymentCheck
 
-
 lolz_pay = APIRouter()
-
 
 
 @lolz_pay.post("/payment_check")

@@ -28,8 +28,8 @@ class LolzteamApi:
         :param proxy_type: Your proxy type. You can use types ( Types.Proxy.socks5 or socks4,https,http )
         :param proxy: Proxy string. Example -> ip:port or login:password@ip:port
         """
-        self.base_url_forum = "https://api.zelenka.guru"
-        self.base_url_market = "https://api.lzt.market"
+        self.base_url_forum = "https://prod-api.zelenka.guru"
+        self.base_url_market = "https://prod-api.lzt.market"
         if proxy_type is not None:
             proxy_type = proxy_type.upper()
             if proxy_type in ["HTTPS", "HTTP", "SOCKS4", "SOCKS5"]:
