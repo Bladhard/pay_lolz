@@ -1,16 +1,15 @@
 import asyncio
 
-from config import LOLZ_API_TOKEN, LOLZ_USER_ID
+from config import LOLZ_API_TOKEN
 
 # from log_config import logger
-from lolz.lolzapi import LolzteamApi
+from lolz.lolzapi import Market
 
-api = LolzteamApi(token=LOLZ_API_TOKEN)
+api = Market(token=LOLZ_API_TOKEN)
 
 # logger.info("This is an info message")
 # logger.warning("This is a warning message")
 # logger.error("This is an error message")
-
 
 class PaymentCheck:
     def __init__(self, subs_price: int, comment_token: str):
@@ -25,8 +24,7 @@ class PaymentCheck:
         :return: True, если платеж найден, False в противном случае.
         """
         try:
-            data_payments = api.market.payments.history(
-                user_id=int(LOLZ_USER_ID),
+            data_payments = api.payments.history(
                 operation_type="income",
                 pmin=self.subs_price,
                 pmax=self.subs_price,
