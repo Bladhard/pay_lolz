@@ -3,13 +3,11 @@ import asyncio
 from config import LOLZ_API_TOKEN
 
 # from log_config import logger
-from lolz.lolzapi import Market
+from lolz.api import LolzAPI
 
-api = Market(token=LOLZ_API_TOKEN)
+api = LolzAPI(token=LOLZ_API_TOKEN)
 
-# logger.info("This is an info message")
-# logger.warning("This is a warning message")
-# logger.error("This is an error message")
+
 
 class PaymentCheck:
     def __init__(self, subs_price: int, comment_token: str):
